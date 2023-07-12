@@ -16,5 +16,13 @@ namespace Scrabble.Tests.ModelTests
             Assert.AreEqual(typeof(ScrabbleScore), score.GetType());
         }
 
+        [TestMethod]
+        public void ScrabbleScoreConstructor_CreatesInstanceOfScrabbleScoreWithParameter_ScrabbleScore()
+        {
+            string testWord = "testword";
+            ScrabbleScore score = new ScrabbleScore(testWord);
+            Assert.AreEqual(testWord, score.Score);
+        }
+
     }
 }
