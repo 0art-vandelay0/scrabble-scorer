@@ -29,5 +29,15 @@ namespace Scrabble.Tests.ModelTests
             Assert.AreEqual(score, scrabbleScore.Score);
         }
 
+        [TestMethod]
+        public void GetScore_ReturnsScoreOfWord_Int()
+        {
+            string word = "testword";
+            int score = 0;
+            ScrabbleScore scrabblesScore = new ScrabbleScore(word, score);
+            Assert.AreEqual(12, ScrabbleScore.GetScore(word));
+
+        }
+
     }
 }
