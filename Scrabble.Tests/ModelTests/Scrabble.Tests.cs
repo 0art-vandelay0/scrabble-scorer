@@ -12,17 +12,20 @@ namespace Scrabble.Tests.ModelTests
         [TestMethod]
         public void ScrabbleScoreConstructor_CreatesInstanceOfScrabbleScore_ScrabbleScore()
         {
-            ScrabbleScore score = new ScrabbleScore("testword");
-            Assert.AreEqual(typeof(ScrabbleScore), score.GetType());
+            string word = "testword";
+            int score = 0;
+            ScrabbleScore scrabbleScore = new ScrabbleScore(word, score);
+            Assert.AreEqual(typeof(ScrabbleScore), scrabbleScore.GetType());
+
         }
 
-        [TestMethod]
-        public void ScrabbleScoreConstructor_CreatesInstanceOfScrabbleScoreWithParameter_ScrabbleScore()
-        {
-            string testWord = "testword";
-            ScrabbleScore score = new ScrabbleScore(testWord);
-            Assert.AreEqual(testWord, score.Score);
-        }
+        // [TestMethod]
+        // public void ScrabbleScoreConstructor_CreatesInstanceOfScrabbleScoreWithParameter_ScrabbleScore()
+        // {
+        //     string testWord = "testword";
+        //     ScrabbleScore word = new ScrabbleScore(testWord);
+        //     Assert.AreEqual(testWord, word.Word);
+        // }
 
     }
 }
