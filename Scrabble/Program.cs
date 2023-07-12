@@ -8,10 +8,11 @@ namespace Scrabble.Models
         public static void Main()
         {
             Console.WriteLine("---------------------");
-            Console.WriteLine("     SCRABBLE!");
+            Console.WriteLine("□ □ □ SCRABBLE! □ □ □");
             Console.WriteLine("--------------------- \n ");
             Console.WriteLine("Enter any single word: ");
             string word = Console.ReadLine();
+            Console.WriteLine("\n");
             int score = 0;
 
             try
@@ -23,9 +24,14 @@ namespace Scrabble.Models
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error = {0}" + ex.Message);
+                Console.WriteLine("\n");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("⚠  Error processing your input '" + word + "'\n" + ex.Message);
                 Console.WriteLine("Please enter a valid word in the form of letters only.");
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Try again...");
+                Console.WriteLine("\n");
+                Console.ResetColor();
                 Main();
             }
         }
@@ -34,12 +40,15 @@ namespace Scrabble.Models
         {
             Console.WriteLine("Would you like to try another word? [Y/N]");
             string answer = Console.ReadLine();
+            Console.WriteLine("\n");
             if (answer == "Y" || answer == "y")
             {
                 Main();
             }
             else if (answer == "N" || answer == "n")
             {
+                Console.WriteLine("\n");
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Goodbye!");
             }
             else
