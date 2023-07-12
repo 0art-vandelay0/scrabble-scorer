@@ -5,7 +5,7 @@ namespace Scrabble.Models
 {
     public class ScrabbleScore
     {
-        public String Word { get; set; }
+        public string Word { get; set; }
         public int Score { get; set; }
 
         public ScrabbleScore(string word, int score)
@@ -13,5 +13,6 @@ namespace Scrabble.Models
             Word = word;
             Score = score;
         }
+
     }
 }
