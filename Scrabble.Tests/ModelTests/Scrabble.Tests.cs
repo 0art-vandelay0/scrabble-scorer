@@ -19,13 +19,15 @@ namespace Scrabble.Tests.ModelTests
 
         }
 
-        // [TestMethod]
-        // public void ScrabbleScoreConstructor_CreatesInstanceOfScrabbleScoreWithParameter_ScrabbleScore()
-        // {
-        //     string testWord = "testword";
-        //     ScrabbleScore word = new ScrabbleScore(testWord);
-        //     Assert.AreEqual(testWord, word.Word);
-        // }
+        [TestMethod]
+        public void ScrabbleScoreConstructor_CreatesInstanceOfScrabbleScoreWithParameter_ScrabbleScore()
+        {
+            string word = "testword";
+            int score = 0;
+            ScrabbleScore scrabbleScore = new ScrabbleScore(word, score);
+            Assert.AreEqual(word, scrabbleScore.Word);
+            Assert.AreEqual(score, scrabbleScore.Score);
+        }
 
     }
 }
